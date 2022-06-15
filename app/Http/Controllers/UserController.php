@@ -96,4 +96,18 @@ class UserController extends Controller
         return redirect('/users')->with('success', 'User Data is successfully updated');
     }
 
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\User  $user
+     * @param  int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $user = User::findOrFail($id);
+        $user->delete();
+
+        return redirect('/users')->with('success', 'User Data is successfully deleted');
+    }
 }
