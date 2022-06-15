@@ -75,6 +75,25 @@ class UserController extends Controller
         return view('user.edit', compact('user'));
     }
 
-
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\User  $user
+     * @param  int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $validatedData = $request->validate([
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required|min:8|max:11|regex:/^([0-9\s\-\+\(\)]*)$/',
+            'role' => 'required',
+        ]);
+        User::whereId($id)->update($validatedData);
+        return redirect('/users')->with('success', 'User Data is successfully updated');
+    }
 
 }
