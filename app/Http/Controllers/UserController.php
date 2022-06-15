@@ -50,8 +50,30 @@ class UserController extends Controller
         return redirect('/users')->with('success', 'User is successfully saved');
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function show(User $user)
+    {
+        //
+    }
 
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\User  $user
+     * @param  int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $user = User::findOrFail($id);
 
+        return view('user.edit', compact('user'));
+    }
 
 
 
