@@ -21,6 +21,20 @@ class ProjectController extends Controller
         Log::critical("create project error".$e->getMessage());
         }
     }
+    public function store(Request $request)
+    {
+        try{
+            $request->validate([
+                'name' => 'required|max:100',
+                'code' => 'required',
+            ]);           
 
+           if(Project::create($request->all())){
+               return redirect()->route('add-project-details-form.index')->with('status', 'Projects Details Form Data Has Been inserted');
+           }     
+        }catch(Exception $e){
+            Log::critical("message".$e->getMessage());
+        }
+    }
 }
 
