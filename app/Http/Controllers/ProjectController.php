@@ -13,7 +13,14 @@ class ProjectController extends Controller
         return view('add-project-details-form.index');
     }
     
-
+    public function create()
+    {
+        try{
+        return view('add-project-details-form.index');
+        }catch(Exception $ex){
+        Log::critical("create project error".$e->getMessage());
+        }
+    }
 
 }
 
