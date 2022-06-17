@@ -12,7 +12,6 @@ class Project extends Model
         'program',
         'program_categorie',
         'program_sub_categorie',
-        'serial_number',
         'code',
         'name',
         'type',
