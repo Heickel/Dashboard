@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,10 +14,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('users', 'UserController');
-Route::get('/users/delete/{id}', 'UserController@destroy')
-     ->name('users.destroy');
+
+
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
+
+Route::middleware(['auth', 'is_admin'])->group(function () {
+    Route::get('/admin',[App\Http\Controllers\UserController::class, 'index'], function () {
+      return view('user.index');
+    })->name('dashboard');
+    Route::resource('users', 'UserController');
+    Route::get('/users/delete/{id}', 'UserController@destroy')
+     ->name('users.destroy');
+  });
+
+Auth::routes();
+
+
+
+
