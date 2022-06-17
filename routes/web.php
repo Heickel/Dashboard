@@ -35,3 +35,5 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('add-project-details-form', [ProjectController::class, 'index'])->name('add-project-details-form.index');
 Route::post('store-project-details-form', [ProjectController::class, 'store'])->name('store_project_details');
+Route::get('add-project-details-form/edit/{project}', [ProjectController::class, 'edit'])->name('add-project-details-form.edit');
+Route::put('add-project-details-form/update/{project}', [ProjectController::class, 'update'])->name('add-project-details-form.update');
