@@ -35,7 +35,8 @@
                             </div>    
                             <div class="form-group col-md-5">
                                <label for="exampleFormControlSelect1">Program</label>
-                               <select class="form-control" id="program" name="program" value="{{ $project->program }}">
+                               <select class="form-control" id="program" name="program">
+                                 <option selected="Select program" disabled selected hidden>{{ $project->program }}</option>
                                   <option>0</option>
                                   <option>1</option>
                                   <option>2</option>
@@ -45,7 +46,8 @@
                             </div> 
                             <div class="form-group col-md-5">
                             <label for="exampleFormControlSelect1">Program type</label>
-                            <select class="form-control" id="type" name="type"  value="{{ $project->type }}">
+                            <select class="form-control" id="type" name="type">
+                              <option selected="Select program type" disabled selected hidden>{{ $project->type }}</option>
                                <option>initiative</option>
                                <option>critical</option>
                                <option>normal</option>
@@ -55,7 +57,8 @@
                             </div>
                             <div class="form-group col-md-5">
                             <label for="exampleFormControlSelect1">Program categorie</label>
-                            <select class="form-control" id="program_categorie" name="program_categorie" value="{{ $project->program_categorie }}">
+                            <select class="form-control" id="program_categorie" name="program_categorie">
+                              <option selected="Select program categorie" disabled selected hidden>{{ $project->program_categorie }}</option>
                                <option>0</option>
                                <option>1</option>
                                <option>2</option>
@@ -65,7 +68,8 @@
                             </div>                 
                             <div class="form-group col-md-5">
                             <label for="exampleFormControlSelect1">Program sub categorie</label>
-                            <select class="form-control" id="program_sub_categorie" name="program_sub_categorie" value="{{ $project->program_sub_categorie }}">
+                            <select class="form-control" id="program_sub_categorie" name="program_sub_categorie">
+                              <option selected="Select program sub categorie" disabled selected hidden>{{ $project->program_sub_categorie }}</option>
                                 <option>0</option>
                                 <option>1</option>
                                 <option>2</option>
@@ -75,7 +79,8 @@
                             </div>
                             <div class="form-group col-md-5">
                             <label for="exampleFormControlSelect1">Requesting Part</label>
-                            <select class="form-control" id="requesting_part" name="requesting_part" value="{{ $project->requesting_part }}">
+                            <select class="form-control" id="requesting_part" name="requesting_part">
+                              <option selected="Select requesting part" disabled selected hidden>{{ $project->requesting_part }}</option>
                                 <option>The legal administration</option>
                                 <option>Corporate Communications</option>
                                 <option>Revenues</option>
@@ -90,7 +95,8 @@
                             </div>
                             <div class="form-group col-md-5">
                             <label for="exampleFormControlSelect1">Purchasing Officer</label>
-                            <select class="form-control" id="purchasing_officer" name="purchasing_officer" value="{{ $project->purchasing_officer }}">
+                            <select class="form-control" id="purchasing_officer" name="purchasing_officer">
+                              <option selected="Select purchasing_officer" disabled selected hidden>{{ $project->purchasing_officer }}</option>
                                 <option>Mohammed Al-Dowsary</option>
                                 <option>Fahad Al-Sahli</option>
                                 <option>Musaed Al-Uhaibi</option>
