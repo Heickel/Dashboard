@@ -46,7 +46,7 @@
 
                               <div class="form-group">
                                   <label for="exampleInputEmail2">Email address</label>
-                                  <input type="email" class="form-control mb-0 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" id="email" placeholder="Enter email" required autocomplete="email" autofocus>
+                                  <input maxlength= "320" type="email" class="form-control mb-0 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" id="email" placeholder="Enter email" required autocomplete="email" autofocus>
                                   @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -59,7 +59,7 @@
                               <div class="form-group">
                                   <label for="password">{{ __('Password') }}</label>
                                   <a href="{{ route('password.request') }}" class="float-right">Forgot password?</a>
-                                  <input type="password" class="form-control mb-0 @error('password') is-invalid @enderror" name="password" id="password" placeholder="Password" required autocomplete="current-password">
+                                  <input maxlength="127" type="password" class="form-control mb-0 @error('password') is-invalid @enderror" name="password" id="password" placeholder="Password" required autocomplete="current-password">
                                   @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
