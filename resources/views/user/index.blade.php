@@ -1,7 +1,6 @@
 <!-- index.blade.php -->
 
 @extends('layouts.layout')
-
 @section('content')
     <style>
         .uper {
@@ -17,6 +16,11 @@
             {{ session()->get('success') }}
             </div><br />
         @endif
+
+        <form action="{{ route('users.create')}}" method="get">
+            @csrf
+            <button class="btn btn-primary mt-3 mb-3 float-right btn-lg" type="submit">Add User</button>
+        </form>
         <table id="user-list-table" class="table table-striped table-bordered mt-4" role="grid" aria-describedby="user-list-page-info">
             <thead>
                 <tr>
@@ -41,7 +45,7 @@
                     <td>
                         <div class="d-flex align-items-center list-user-action">
                             <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="{{ route('users.edit', $user->id)}}"><i class="ri-pencil-line"></i></a>
-                            <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="{{ route('users.destroy', ['id' => $user->id]) }}"><i class="ri-delete-bin-line"></i></a>
+                            <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="{{ route('users.destroys', ['id' => $user->id]) }}"><i class="ri-delete-bin-line"></i></a>
                         </div>
                     </td>
                 </tr>
@@ -69,9 +73,5 @@
                 </nav>
             </div>
         </div>
-        <form action="{{ route('users.create')}}" method="get">
-            @csrf
-            <button class="btn btn-primary" type="submit">Add User</button>
-        </form>
     </div>
 @endsection
