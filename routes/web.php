@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 
 
 /*
@@ -15,8 +16,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-
-
 Route::get('/', function () {
     return view('auth.login');
 });
@@ -27,10 +26,12 @@ Route::middleware(['auth', 'is_admin'])->group(function () {
     })->name('dashboard');
     Route::resource('users', 'UserController');
     Route::get('/users/delete/{id}', 'UserController@destroy')
-     ->name('users.destroy');
+     ->name('users.destroys');
   });
 
 Auth::routes();
+
+
 
 
 
