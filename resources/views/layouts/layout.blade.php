@@ -8,15 +8,19 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <title>Dashboard</title>
       <!-- Favicon -->
-      <link rel="shortcut icon" href="images/favicon.ico" />
+      <link rel="shortcut icon" href="{{asset('public/images/favicon.ico') }}" />
       <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="{{asset('css/bootstrap.min.css') }}">
       <!-- Typography CSS -->
-      <link rel="stylesheet" href="css/typography.css">
+      <link rel="stylesheet" href="{{asset('css/typography.css') }}">
       <!-- Style CSS -->
-      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="{{asset('css/style.css') }}">
       <!-- Responsive CSS -->
-      <link rel="stylesheet" href="css/responsive.css">
+      <link rel="stylesheet" href="{{asset('css/responsive.css') }}">
+      <!-- Sweet Alert Css -->
+      <link rel="stylesheet" href="{{asset('sweetalert2.min.css')}}">
+      <!-- Sweet Alert Css -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
    </head>
 
 
@@ -39,7 +43,7 @@
          <div class="iq-sidebar">
             <div class="iq-sidebar-logo d-flex justify-content-between">
                <a href="index.html" class="header-logo">
-                  <img src="images/logo.png" class="img-fluid rounded-normal" alt="">
+                  <img src="{{asset('images/logo.png')}}" class="img-fluid rounded-normal" alt="">
                   <div class="logo-title">
                      <span class="text-danger text-uppercase">Server<span class="text-primary ml-1">360</span></span>
                   </div>
@@ -67,7 +71,7 @@
                         <ul id="userinfo" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle" style="">
                            <li><a href="profile.html"><i class="las la-id-card-alt"></i>User Profile</a></li>
                            <li><a href="profile-edit.html"><i class="las la-edit"></i>User Edit</a></li>
-                           <li><a href="add-user.html"><i class="las la-plus-circle"></i>User Add</a></li>
+                           <li><a href="{{ route('users.create')}}"><i class="las la-plus-circle"></i>User Add</a></li>
                            <li><a href="{{ route('users.index')}}"><i class="las la-th-list"></i>User List</a></li>
                         </ul>
                      </li>
@@ -213,7 +217,7 @@
                      </div>
                      <div class="iq-navbar-logo d-flex justify-content-between">
                         <a href="index.html" class="header-logo">
-                           <img src="images/logo.png" class="img-fluid rounded-normal" alt="">
+                           <img src="{{asset('images/logo.png')}}" class="img-fluid rounded-normal" alt="">
                            <div class="pt-2 pl-2 logo-title">
                               <span class="text-danger text-uppercase">Server<span class="text-primary ml-1">360</span></span>
                            </div>
@@ -251,7 +255,7 @@
                                     <a href="#" class="iq-sub-card" >
                                        <div class="media align-items-center">
                                           <div class="">
-                                             <img class="avatar-40 rounded" src="images/user/01.jpg" alt="">
+                                             <img class="avatar-40 rounded" src="{{asset('images/user/01.jpg')}}" alt="">
                                           </div>
                                           <div class="media-body ml-3">
                                              <h6 class="mb-0 ">Emma Watson Barry</h6>
@@ -263,7 +267,7 @@
                                     <a href="#" class="iq-sub-card" >
                                        <div class="media align-items-center">
                                           <div class="">
-                                             <img class="avatar-40 rounded" src="images/user/02.jpg" alt="">
+                                             <img class="avatar-40 rounded" src="{{asset('images/user/02.jpg')}}" alt="">
                                           </div>
                                           <div class="media-body ml-3">
                                              <h6 class="mb-0 ">New customer is join</h6>
@@ -275,7 +279,7 @@
                                     <a href="#" class="iq-sub-card" >
                                        <div class="media align-items-center">
                                           <div class="">
-                                             <img class="avatar-40 rounded" src="images/user/03.jpg" alt="">
+                                             <img class="avatar-40 rounded" src="{{asset('images/user/03.jpg')}}" alt="">
                                           </div>
                                           <div class="media-body ml-3">
                                              <h6 class="mb-0 ">Two customer is left</h6>
@@ -287,7 +291,7 @@
                                     <a href="#" class="iq-sub-card" >
                                        <div class="media align-items-center">
                                           <div class="">
-                                             <img class="avatar-40 rounded" src="images/user/04.jpg" alt="">
+                                             <img class="avatar-40 rounded" src="{{asset('images/user/04.jpg')}}" alt="">
                                           </div>
                                           <div class="media-body ml-3">
                                              <h6 class="mb-0 ">New Mail from Fenny</h6>
@@ -305,13 +309,13 @@
                   <ul class="navbar-list">
                      <li class="line-height">
                         <a href="#" class="search-toggle iq-waves-effect d-flex align-items-center">
-                        <img src="images/user/user.png" class="img-fluid rounded-circle" alt="user">
+                        <img src="{{asset('images/user/user.png')}}" class="img-fluid rounded-circle" alt="user">
                         </a>
                         <div class="iq-sub-dropdown iq-user-dropdown">
                            <div class="iq-card shadow-none m-0">
                               <div class="iq-card-body p-0 ">
                                  <div class="bg-primary p-3">
-                                    <h5 class="mb-0 text-white line-height">Hello Barry Tech</h5>
+                                    <h5 class="mb-0 text-white line-height">Hello {{auth()->user()->firstname}} {{auth()->user()->lastname}} !</h5>
                                     <span class="text-white font-size-12">Available</span>
                                  </div>
                                  <a href="profile.html" class="iq-sub-card iq-bg-primary-hover">
@@ -325,7 +329,7 @@
                                        </div>
                                     </div>
                                  </a>
-                                 <a href="profile-edit.html" class="iq-sub-card iq-bg-primary-hover">
+                                 <a href="{{ route('users.edit', auth()->id())}}" class="iq-sub-card iq-bg-primary-hover">
                                     <div class="media align-items-center">
                                        <div class="rounded iq-card-icon iq-bg-primary">
                                           <i class="ri-profile-line"></i>
@@ -358,9 +362,20 @@
                                        </div>
                                     </div>
                                  </a>
+
+
                                  <div class="d-inline-block w-100 text-center p-3">
-                                    <a class="bg-primary iq-sign-btn" href="sign-in.html" role="button">Sign out<i class="ri-login-box-line ml-2"></i></a>
+                                    <a class="bg-primary iq-sign-btn" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                       document.getElementById('logout-form').submit();">
+                                       {{ __('Sign out') }}
+                                    <i class="ri-login-box-line ml-2"></i></a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
                                  </div>
+
+
                               </div>
                            </div>
                         </div>
@@ -400,59 +415,62 @@
 
       <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+        <script src="{{asset('js/jquery.min.js') }}"></script>
+        <script src="{{asset('js/popper.min.js') }}"></script>
+        <script src="{{asset('js/bootstrap.min.js') }}"></script>
         <!-- Appear JavaScript -->
-        <script src="js/jquery.appear.js"></script>
+        <script src="{{asset('js/jquery.appear.js') }}"></script>
         <!-- Countdown JavaScript -->
-        <script src="js/countdown.min.js"></script>
+        <script src="{{asset('js/countdown.min.js') }}"></script>
         <!-- Counterup JavaScript -->
-        <script src="js/waypoints.min.js"></script>
-        <script src="js/jquery.counterup.min.js"></script>
+        <script src="{{asset('js/waypoints.min.js') }}"></script>
+        <script src="{{asset('js/jquery.counterup.min.js') }}"></script>
         <!-- Wow JavaScript -->
-        <script src="js/wow.min.js"></script>
+        <script src="{{asset('js/wow.min.js') }}"></script>
         <!-- Apexcharts JavaScript -->
-        <script src="js/apexcharts.js"></script>
+        <script src="{{asset('js/apexcharts.js') }}"></script>
         <!-- Slick JavaScript -->
-        <script src="js/slick.min.js"></script>
+        <script src="{{asset('js/slick.min.js') }}"></script>
         <!-- Select2 JavaScript -->
-        <script src="js/select2.min.js"></script>
+        <script src="{{asset('js/select2.min.js') }}"></script>
         <!-- Owl Carousel JavaScript -->
-        <script src="js/owl.carousel.min.js"></script>
+        <script src="{{asset('js/owl.carousel.min.js') }}"></script>
         <!-- Magnific Popup JavaScript -->
-        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="{{asset('js/jquery.magnific-popup.min.js') }}"></script>
         <!-- Smooth Scrollbar JavaScript -->
-        <script src="js/smooth-scrollbar.js"></script>
+        <script src="{{asset('js/smooth-scrollbar.js') }}"></script>
         <!-- lottie JavaScript -->
-        <script src="js/lottie.js"></script>
+        <script src="{{asset('js/lottie.js') }}"></script>
         <!-- am core JavaScript -->
-        <script src="js/core.js"></script>
+        <script src="{{asset('js/core.js') }}"></script>
         <!-- am charts JavaScript -->
-        <script src="js/charts.js"></script>
+        <script src="{{asset('js/charts.js') }}"></script>
         <!-- am animated JavaScript -->
-        <script src="js/animated.js"></script>
+        <script src="{{asset('js/animated.js') }}"></script>
         <!-- am kelly JavaScript -->
-        <script src="js/kelly.js"></script>
+        <script src="{{asset('js/kelly.js') }}"></script>
         <!-- am maps JavaScript -->
-        <script src="js/maps.js"></script>
+        <script src="{{asset('js/maps.js') }}"></script>
         <!-- am worldLow JavaScript -->
-        <script src="js/worldLow.js"></script>
+        <script src="{{asset('js/worldLow.js') }}"></script>
         <!-- Raphael-min JavaScript -->
-        <script src="js/raphael-min.js"></script>
+        <script src="{{asset('js/raphael-min.js') }}"></script>
         <!-- Morris JavaScript -->
-        <script src="js/morris.js"></script>
+        <script src="{{asset('js/morris.js') }}"></script>
         <!-- Morris min JavaScript -->
-        <script src="js/morris.min.js"></script>
+        <script src="{{asset('js/morris.min.js') }}"></script>
         <!-- Flatpicker Js -->
-        <script src="js/flatpickr.js"></script>
+        <script src="{{asset('js/flatpickr.js') }}"></script>
         <!-- Style Customizer -->
-        <script src="js/style-customizer.js"></script>
+        <script src="{{asset('js/style-customizer.js') }}"></script>
         <!-- Chart Custom JavaScript -->
-        <script src="js/chart-custom.js"></script>
+        <script src="{{asset('js/chart-custom.js') }}"></script>
         <!-- Custom JavaScript -->
-        <script src="js/custom.js"></script>
-
+        <script src="{{asset('js/custom.js') }}"></script>
+        <!-- Sweet Alert -->
+        <script src="{{asset('sweetalert2.all.min.js')}}"></script>
+        <!--Sweet Alert -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 
 
 
