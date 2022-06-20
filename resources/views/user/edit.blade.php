@@ -40,18 +40,18 @@
                                             <div class="row">
                                                 <div class="form-group col-md-6">
                                                     <label for="fname">First Name:</label>
-                                                    <input type="text" class="form-control" id="fname" name="firstname" value="{{ $user->firstname }}">
+                                                    <input maxlength="30" type="text" class="form-control" id="fname" name="firstname" value="{{ $user->firstname }}">
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label for="lname">Last Name:</label>
-                                                    <input type="text" class="form-control" id="lname" name="lastname" value="{{ $user->lastname }}">
+                                                    <input maxlength="30" type="text" class="form-control" id="lname" name="lastname" value="{{ $user->lastname }}">
                                                 </div>
                                             </div>
                                             <hr>
                                             <div class="row">
                                                 <div class="form-group col-md-6">
                                                     <label for="email">Email:</label>
-                                                    <input type="email" class="form-control" id="email" name="email" value="{{ $user->email }}">
+                                                    <input maxlength="320" type="email" class="form-control" id="email" name="email" value="{{ $user->email }}">
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label for="mobno">Phone Number:</label>
