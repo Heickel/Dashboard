@@ -493,6 +493,32 @@
                     });
                 });
 
+                $('.add-confirm').click(function(event) {
+                event.preventDefault();
+                var form =  $(this).closest("form");
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "this user will be added to the database!",
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, add user!'
+                    }).then(function(value) {
+                    if (value.isConfirmed) {
+                        form.submit();
+                        Swal.fire(
+                        'Added!',
+                        'The user has been added.',
+                        'success'
+                        );
+                    }else{
+                        window.location.reload();
+                    }
+                    });
+                });
+
+
 
          </script>
 
