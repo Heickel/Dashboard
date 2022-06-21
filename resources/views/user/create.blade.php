@@ -87,7 +87,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-3 offset-md-10">
-                                                <button type="submit" class="btn btn-primary btn-lg tm-5">Add New User</button>
+                                                <button type="submit" class="btn btn-primary btn-lg tm-5 add-confirm ">Add New User</button>
                                             </div>
                                         </div>
                                     </div>
