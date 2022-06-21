@@ -18,8 +18,6 @@
       <!-- Responsive CSS -->
       <link rel="stylesheet" href="{{asset('css/responsive.css') }}">
       <!-- Sweet Alert Css -->
-      <link rel="stylesheet" href="{{asset('sweetalert2.min.css')}}">
-      <!-- Sweet Alert Css -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
    </head>
 
@@ -467,10 +465,36 @@
         <script src="{{asset('js/chart-custom.js') }}"></script>
         <!-- Custom JavaScript -->
         <script src="{{asset('js/custom.js') }}"></script>
-        <!-- Sweet Alert -->
-        <script src="{{asset('sweetalert2.all.min.js')}}"></script>
         <!--Sweet Alert -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            $('.delete-confirm').click(function(event) {
+                event.preventDefault();
+                const url = $(this).attr('url');
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "this user will be deleted!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete user!'
+                    }).then(function(value) {
+                    if (value.isConfirmed) {
+                        window.location.href = url;
+                        Swal.fire(
+                        'Deleted!',
+                        'The user has been deleted.',
+                        'success'
+                        );
+                    }else{
+                        window.location.reload();
+                    }
+                    });
+                });
+
+
+         </script>
 
 
 
