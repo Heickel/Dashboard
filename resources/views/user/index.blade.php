@@ -45,7 +45,7 @@
                     <td>
                         <div class="d-flex align-items-center list-user-action">
                             <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="{{ route('users.edit', $user->id)}}"><i class="ri-pencil-line"></i></a>
-                            <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="{{ route('users.destroys', ['id' => $user->id]) }}"><i class="ri-delete-bin-line"></i></a>
+                                <a class="iq-bg-primary delete-confirm" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" url="{{ route('users.destroys', $user->id) }}"><i class="ri-delete-bin-line"></i></a>
                         </div>
                     </td>
                 </tr>
@@ -75,3 +75,4 @@
         </div>
     </div>
 @endsection
+
