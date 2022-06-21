@@ -518,7 +518,30 @@
                     });
                 });
 
-
+                $('.edit-confirm').click(function(event) {
+                event.preventDefault();
+                var form =  $(this).closest("form");
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "the user will be updated !",
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, update user!'
+                    }).then(function(value) {
+                    if (value.isConfirmed) {
+                        form.submit();
+                        Swal.fire(
+                        'Updated!',
+                        'The user has been updated',
+                        'success'
+                        );
+                    }else{
+                        window.location.reload();
+                    }
+                    });
+                });
 
          </script>
 
