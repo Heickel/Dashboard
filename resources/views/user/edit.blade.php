@@ -70,7 +70,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-3 offset-md-10">
-                                                <button type="submit" class="btn btn-primary btn-lg tm-5">Update User</button>
+                                                <button type="submit" class="btn btn-primary btn-lg tm-5 edit-confirm ">Update User</button>
                                             </div>
                                         </div>
                                     </div>
