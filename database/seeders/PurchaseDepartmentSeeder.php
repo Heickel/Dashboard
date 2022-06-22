@@ -15,19 +15,39 @@ class PurchaseDepartmentSeeder extends Seeder
     public function run()
     {
         PurchaseDepartment::create([
-            'name' => 'Department 1',
+            'name' => 'محمد الدوسري',
         ]);
+
         PurchaseDepartment::create([
-            'name' => 'Department 2',
+            'name' => 'فهد السهلي',
         ]);
+
         PurchaseDepartment::create([
-            'name' => 'Department 3',
+            'name' => 'مساعد العنيبي',
         ]);
+
         PurchaseDepartment::create([
-            'name' => 'Department 4',
+            'name' => 'محمد الدخيل',
         ]);
+
         PurchaseDepartment::create([
-            'name' => 'Department 5',
+            'name' => 'احمد المرشد',
+        ]);
+
+        PurchaseDepartment::create([
+            'name' => 'صالح الجربوع',
+        ]);
+
+        PurchaseDepartment::create([
+            'name' => 'عبد الله السحيباني',
+        ]);
+
+        PurchaseDepartment::create([
+            'name' => 'عمر الفهد',
+        ]);
+
+        PurchaseDepartment::create([
+            'name' => 'عمر النفيعي',
         ]);
 
     }
