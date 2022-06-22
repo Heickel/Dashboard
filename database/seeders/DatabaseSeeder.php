@@ -19,5 +19,6 @@ class DatabaseSeeder extends Seeder
             PurchaseDepartmentSeeder::class,
         ]);
         $this->call(RequestingPartySeeder::class);
+        $this->call(SupplierSeeder::class);
     }
 }
