@@ -15,20 +15,46 @@ class RequestingPartySeeder extends Seeder
     public function run()
     {
         RequestingParty::create([
-            'name' => 'Party 1',
+            'name' => 'الاتصال المؤسسي',
         ]);
+
         RequestingParty::create([
-            'name' => 'Party 2',
+            'name' => 'الايراد ات',
         ]);
+
         RequestingParty::create([
-            'name' => 'Party 2',
+            'name' => 'ادارة المخاطر',
         ]);
+
         RequestingParty::create([
-            'name' => 'Party 4',
+            'name' => 'ادارة التقنية',
         ]);
+
         RequestingParty::create([
-            'name' => 'Party 5',
+            'name' => 'الادارة الهندسية',
         ]);
+
+        RequestingParty::create([
+            'name' => 'مكتب التحول',
+        ]);
+
+        RequestingParty::create([
+            'name' => 'ادارة التشغيل',
+        ]);
+
+        RequestingParty::create([
+            'name' => 'الموارد البشرية',
+        ]);
+
+        RequestingParty::create([
+            'name' => 'ادارة الوسائل',
+        ]);
+
+        RequestingParty::create([
+            'name' => 'الإدارة القانونية',
+        ]);
+
+
 
     }
 }
