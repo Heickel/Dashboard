@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
 
 class UserController extends Controller
 {
@@ -14,8 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-
+        $users = User::paginate(5);
         return view('user.index',compact('users'));
     }
 
