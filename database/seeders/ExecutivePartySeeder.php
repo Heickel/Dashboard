@@ -16,17 +16,9 @@ class ExecutivePartySeeder extends Seeder
     {
         ExecutiveParty::create([
             'name' => 'ExecParty 1',
-        ]);
-        ExecutiveParty::create([
             'name' => 'ExecParty 2',
-        ]);
-        ExecutiveParty::create([
             'name' => 'ExecParty 3',
-        ]);
-        ExecutiveParty::create([
             'name' => 'ExecParty 4',
-        ]);
-        ExecutiveParty::create([
             'name' => 'ExecParty 5',
         ]);
     }
