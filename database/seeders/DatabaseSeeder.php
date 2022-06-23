@@ -20,5 +20,10 @@ class DatabaseSeeder extends Seeder
         ]);
         $this->call(RequestingPartySeeder::class);
         $this->call(SupplierSeeder::class);
+        $this->call([
+            ProgramSeeder::class,
+            ProgramCategorySeeder::class,
+            ActivitySectorProjectSeeder::class,
+        ]);
     }
 }
