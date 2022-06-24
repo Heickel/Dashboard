@@ -6,6 +6,8 @@ use App\Http\Controllers\ProjectController;
 
 
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,11 +31,9 @@ Route::middleware(['auth', 'is_admin'])->group(function () {
     Route::get('/users/delete/{id}', 'UserController@destroy')
      ->name('users.destroys');
   });
-
 Auth::routes();
-//User Route
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('add-project-details-form', [ProjectController::class, 'index'])->name('add-project-details-form.index');
+Route::get('projects', [ProjectController::class, 'index'])->name('projects.index');
 Route::post('store-project-details-form', [ProjectController::class, 'store'])->name('store_project_details');
-Route::get('add-project-details-form/edit/{project}', [ProjectController::class, 'edit'])->name('add-project-details-form.edit');
-Route::put('add-project-details-form/update/{project}', [ProjectController::class, 'update'])->name('add-project-details-form.update');
+Route::get('projects/edit/{project}', [ProjectController::class, 'edit'])->name('projects.edit');
+Route::put('projects/update/{project}', [ProjectController::class, 'update'])->name('projects.update');
+
