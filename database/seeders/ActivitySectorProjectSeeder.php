@@ -15,7 +15,7 @@ class ActivitySectorProjectSeeder extends Seeder
      */
     public function run()
     {
-        ProgramCategory::create(
+        ActivitySectorProjectSeeder::create(
         [
             'title' => 'Authorized Economic Operator',
             'programs_category_id' => '1',            
